@@ -14,10 +14,11 @@ namespace PostagemFacil.Financeiro.API.Controllers
             _custosService = custosService;
         }
 
-        [HttpGet("transportadora/{tipoCaixaId}/peso/{pesoId}")]
-        public IActionResult ObterCustoPostal(int tipoCaixaId, int pesoId)
+        [HttpGet("transportadora/{transportadoraId}/tipo-caixa/{tipoCaixaId}/peso-limite/{pesoLimiteId}")]
+        public async Task<IActionResult> ObterCustoPostal(int transportadoraId, int tipoCaixaId, int pesoLimiteId)
         {
-            return Ok(_custosService.CalcularCustoPostal(tipoCaixaId, pesoId));
+            var custoPostal = await _custosService.CalcularCustoPostal(transportadoraId, tipoCaixaId, pesoLimiteId);
+            return Ok(custoPostal);
         }
     }
 }

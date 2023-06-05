@@ -1,15 +1,28 @@
-﻿namespace PostagemFacil.Financeiro.API.Business
+﻿using PostagemFacil.Financeiro.API.Data;
+
+namespace PostagemFacil.Financeiro.API.Business
 {
     public interface ICustosService
     {
-        decimal CalcularCustoPostal(int tipoCaixaId, int pesoId);
+        Task<decimal> CalcularCustoPostal(int transportadoraId, int tipoCaixaId, int pesoLimiteId);
     }
 
     public class CustosService : ICustosService
     {
-        public decimal CalcularCustoPostal(int tipoCaixaId, int pesoId)
+        private readonly FinanceiroContext _financeiroContext;
+
+        public CustosService(FinanceiroContext financeiroContext)
         {
-            return 1M * 5M;
+            _financeiroContext = financeiroContext;
+        }
+
+        public async Task<decimal> CalcularCustoPostal(int transportadoraId, int tipoCaixaId, int pesoLimiteId)
+        {
+            var transportadora = await _financeiroContext.Transportadoras.FindAsync(transportadoraId);
+            var tipoCaixa = await _financeiroContext.TiposCaixa.FindAsync(tipoCaixaId);
+            var pesosLimite = await _financeiroContext.PesosLimite.FindAsync(pesoLimiteId);
+
+            return transportadora.FatorPostal * (tipoCaixa.CustoPostal + pesosLimite.CustoPostal);
         }
     }
 }
