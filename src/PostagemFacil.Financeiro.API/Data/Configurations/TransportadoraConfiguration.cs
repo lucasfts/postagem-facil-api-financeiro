@@ -12,8 +12,7 @@ namespace PostagemFacil.Financeiro.API.Data.Configurations
                 new Transportadora() { Id = 1, Nome = "Correios", FatorPostal = 1M },
                 new Transportadora() { Id = 2, Nome = "JadLog", FatorPostal = 0.95M },
                 new Transportadora() { Id = 3, Nome = "DHL", FatorPostal = 1.7M },
-                new Transportadora() { Id = 4, Nome = "UPS", FatorPostal = 2M },
-                new Transportadora() { Id = 5, Nome = "Fedex", FatorPostal = 1.8M }
+                new Transportadora() { Id = 4, Nome = "Fedex", FatorPostal = 1.5M }
             );
         }
     }

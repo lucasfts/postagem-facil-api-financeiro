@@ -11,7 +11,7 @@ using PostagemFacil.Financeiro.API.Data;
 namespace PostagemFacil.Financeiro.API.Data.Migrations
 {
     [DbContext(typeof(FinanceiroContext))]
-    [Migration("20230604232357_SeedTables")]
+    [Migration("20230610170328_SeedTables")]
     partial class SeedTables
     {
         /// <inheritdoc />
@@ -54,13 +54,13 @@ namespace PostagemFacil.Financeiro.API.Data.Migrations
                         {
                             Id = 2,
                             CustoPostal = 1m,
-                            Descricao = "Entre 3kg e 10kg"
+                            Descricao = "Entre 3kg e 5kg"
                         },
                         new
                         {
                             Id = 3,
                             CustoPostal = 2m,
-                            Descricao = "Entre 10kg e 20kg"
+                            Descricao = "Entre 5kg e 10kg"
                         });
                 });
 
@@ -88,25 +88,19 @@ namespace PostagemFacil.Financeiro.API.Data.Migrations
                         {
                             Id = 1,
                             CustoPostal = 1.5m,
-                            Descricao = "30cm x 30cm x 30cm"
+                            Descricao = "20cm x 20cm x 20cm"
                         },
                         new
                         {
                             Id = 2,
                             CustoPostal = 2m,
-                            Descricao = "60cm x 60cm x 60cm"
+                            Descricao = "40cm x 40cm x 40cm"
                         },
                         new
                         {
                             Id = 3,
                             CustoPostal = 2.5m,
-                            Descricao = "90cm x 90cm x 90cm"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CustoPostal = 3m,
-                            Descricao = "120cm x 120cm x 120cm"
+                            Descricao = "60cm x 60cm x 60cm"
                         });
                 });
 
@@ -151,13 +145,7 @@ namespace PostagemFacil.Financeiro.API.Data.Migrations
                         new
                         {
                             Id = 4,
-                            FatorPostal = 2m,
-                            Nome = "UPS"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            FatorPostal = 1.8m,
+                            FatorPostal = 1.5m,
                             Nome = "Fedex"
                         });
                 });

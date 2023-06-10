@@ -18,8 +18,8 @@ namespace PostagemFacil.Financeiro.API.Data.Migrations
                 values: new object[,]
                 {
                     { 1, 0.5m, "Até 3kg" },
-                    { 2, 1m, "Entre 3kg e 10kg" },
-                    { 3, 2m, "Entre 10kg e 20kg" }
+                    { 2, 1m, "Entre 3kg e 5kg" },
+                    { 3, 2m, "Entre 5kg e 10kg" }
                 });
 
             migrationBuilder.InsertData(
@@ -27,10 +27,9 @@ namespace PostagemFacil.Financeiro.API.Data.Migrations
                 columns: new[] { "Id", "CustoPostal", "Descricao" },
                 values: new object[,]
                 {
-                    { 1, 1.5m, "30cm x 30cm x 30cm" },
-                    { 2, 2m, "60cm x 60cm x 60cm" },
-                    { 3, 2.5m, "90cm x 90cm x 90cm" },
-                    { 4, 3m, "120cm x 120cm x 120cm" }
+                    { 1, 1.5m, "20cm x 20cm x 20cm" },
+                    { 2, 2m, "40cm x 40cm x 40cm" },
+                    { 3, 2.5m, "60cm x 60cm x 60cm" }
                 });
 
             migrationBuilder.InsertData(
@@ -41,8 +40,7 @@ namespace PostagemFacil.Financeiro.API.Data.Migrations
                     { 1, 1m, "Correios" },
                     { 2, 0.95m, "JadLog" },
                     { 3, 1.7m, "DHL" },
-                    { 4, 2m, "UPS" },
-                    { 5, 1.8m, "Fedex" }
+                    { 4, 1.5m, "Fedex" }
                 });
         }
 
@@ -80,11 +78,6 @@ namespace PostagemFacil.Financeiro.API.Data.Migrations
                 keyValue: 3);
 
             migrationBuilder.DeleteData(
-                table: "TiposCaixa",
-                keyColumn: "Id",
-                keyValue: 4);
-
-            migrationBuilder.DeleteData(
                 table: "Transportadoras",
                 keyColumn: "Id",
                 keyValue: 1);
@@ -103,11 +96,6 @@ namespace PostagemFacil.Financeiro.API.Data.Migrations
                 table: "Transportadoras",
                 keyColumn: "Id",
                 keyValue: 4);
-
-            migrationBuilder.DeleteData(
-                table: "Transportadoras",
-                keyColumn: "Id",
-                keyValue: 5);
         }
     }
 }

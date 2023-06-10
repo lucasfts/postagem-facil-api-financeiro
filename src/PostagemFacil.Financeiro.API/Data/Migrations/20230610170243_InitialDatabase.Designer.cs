@@ -11,7 +11,7 @@ using PostagemFacil.Financeiro.API.Data;
 namespace PostagemFacil.Financeiro.API.Data.Migrations
 {
     [DbContext(typeof(FinanceiroContext))]
-    [Migration("20230604225029_InitialDatabase")]
+    [Migration("20230610170243_InitialDatabase")]
     partial class InitialDatabase
     {
         /// <inheritdoc />
