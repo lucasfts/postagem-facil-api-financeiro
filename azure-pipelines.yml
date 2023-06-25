@@ -37,7 +37,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure basic subscription(1)(bfc785e5-3934-4759-9200-1bcfe3e2d212)'
+    azureSubscription: 'Azure basic subscription(bfc785e5-3934-4759-9200-1bcfe3e2d212)'
     appType: 'webAppLinux'
     WebAppName: 'postagem-facil-financeiro-api'
     packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
