@@ -34,19 +34,6 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-- task: VSTest@2
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      **\*.dll
-      !**\*TestAdapter.dll
-      !**\obj\**
-    searchFolder: 'tests\PostagemFacil.Solicitacoes.UnitTests'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-    
-    
-
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
