@@ -36,6 +36,7 @@ steps:
 
 - task: VSTest@2
   inputs:
+    searchFolder: '$(System.DefaultWorkingDirectory)/tests/PostagemFacil.Solicitacoes.UnitTests'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
